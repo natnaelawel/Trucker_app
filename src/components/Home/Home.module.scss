@@ -1,0 +1,12 @@
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.h1{
+    font-size: 40.0;
+    color: rgba($color: #0fff00, $alpha: 1.0);
+    &::after{
+        content: "something";
+    }
+}
