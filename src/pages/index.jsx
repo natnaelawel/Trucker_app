@@ -1,12 +1,11 @@
 import Head from "next/head";
 import Home from "../components/Home/Home";
+import Meta from "../components/Meta";
 
 export default function Index() {
   return (
     <div >
-      <Head>
-        <title>Trucker</title>
-      </Head>
+      <Meta title="Trucker" keywords="trucker app, driver app" description="some description"/>
       <Home />
     </div>
   );

@@ -1,12 +1,36 @@
-.home{
+.home {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.h1{
+
+.h1 {
     font-size: 40.0;
     color: rgba($color: #0fff00, $alpha: 1.0);
-    &::after{
+
+    &::after {
         content: "something";
     }
+}
+
+.root {
+    flex-grow: 1;
+}
+
+.paper {
+    padding: 10px;
+    margin: auto;
+    max-width: 500;
+}
+
+.image {
+    width: 128px;
+    height: 128px;
+}
+
+.img {
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
 }

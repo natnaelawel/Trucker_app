@@ -1,15 +1,10 @@
-export default function Custom404() {
+import Head from "next/head"
+import Custom404 from "../components/404/Custom404"
+
+export default function Custom404Page() {
   return (
-    <div>
-      <div className="">
-        <a
-          href="#"
-          className=""
-        >
-          Get started
-        </a>
+     <div className="notfound">
+       <Custom404/>
       </div>
-      <h1>404 - Page Not Found</h1>
-    </div>
-  );
+    );
 }

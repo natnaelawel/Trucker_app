@@ -1,0 +1,37 @@
+.main{
+    min-height: 100vh;
+    .left{
+        min-height: 100vh;
+        position: relative;
+    }
+    .right{
+        overflow: hidden;
+        padding: 5% 7%;
+        .logo{
+            text-align: center;
+            img{
+                border: 1px solid blue;
+            }
+        }
+    }
+}
+.fade {
+
+    .fade-enter{
+        opacity: 0;
+    }
+    .fade-exit{
+        opacity: 1;
+    }
+    .fade-enter-active{
+        opacity: 1;
+    }
+    .fade-exit-active{
+        opacity: 0;
+    }
+    .fade-enter-active,
+    .fade-exit-active{
+        transition: opacity 500ms;
+    }
+    
+}
