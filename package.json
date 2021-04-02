@@ -4,20 +4,26 @@
   "private": true,
   "main": "src/pages/index.jsx",
   "scripts": {
-    "dev": "next dev -p 5000",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
-    "classnames": "^2.2.6",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "@react-google-maps/api": "^2.1.1",
+    "classnames": "^2.3.0",
+    "formik": "^2.2.6",
     "next": "10.0.9",
     "nprogress": "^0.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-elastic-carousel": "^0.11.4",
     "react-input-verification-code": "^0.6.4",
-    "react-phone-input-2": "^2.13.9",
-    "sass": "^1.32.8"
+    "react-material-ui-carousel": "^2.2.2",
+    "react-phone-input-2": "^2.14.0",
+    "sass": "^1.32.8",
+    "swiper": "^6.5.3"
   }
 }

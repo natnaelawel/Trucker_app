@@ -1,73 +1,111 @@
-import {AppBar, Badge, IconButton, Menu, MenuItem, Toolbar, Typography } from '@material-ui/core';
-import Styles from "./navbar.module.css"
+import {
+  AppBar,
+  Avatar,
+  Badge,
+  IconButton,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
+} from "@material-ui/core";
+import classes from "./navbar.module.scss";
 
 import MenuIcon from "@material-ui/icons/Menu";
 
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import { useState } from 'react';
-
+import { useState } from "react";
+import Image from "next/image";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 function NavBar() {
-    const [auth, setAuth] = useState(null)
-    const [open, setOpen] = useState(false)
+  const [auth, setAuth] = useState(null);
+  const [isOpen, setIsOpen] = useState(null);
 
-    const handleClose = ()=>{
-        setOpen(open => !open);
-    }
-    return (
-        <AppBar position="static">
-          <Toolbar >
-            <IconButton
-              edge="start"
-              className={Styles.menuButton}
-              color="inherit"
-              aria-label="menu"
-            >
-            </IconButton>
-            <Typography variant="h6" className={Styles.title}>
-              TP
-            </Typography>
-            <IconButton aria-label="show 3 new notifications" color="inherit">
-              <Badge badgeContent={3} color="secondary">
+  const handleClick = (event) => {
+    setIsOpen(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setIsOpen(null);
+  };
+
+  return (
+    <AppBar elevation={1} className={classes.appbar} color="transparent" position="static">
+      <Toolbar className={classes.toolbar}>
+        <IconButton
+          edge="start"
+          className={classes.nav_brand}
+          color="inherit"
+          aria-label="menu"
+        >
+          <Image
+            src="/images/another.svg"
+            width={50}
+            height={50}
+            objectFit="cover"
+          />
+        </IconButton>
+        {!auth && (
+          <div className={classes.nav_items}>
+            <IconButton aria-label="show 3 new notifications" >
+              <Badge badgeContent={3} color="primary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-           
-            {!auth && (
-              <div>
-                <IconButton
-                  aria-label="account of current user"
-                  aria-controls="menu-appbar"
-                  aria-haspopup="true"
-                  color="inherit"
-                >
-                  <AccountCircle />
-                </IconButton>
 
-                <Menu
-                  id="menu-appbar"
-                //   anchorEl={anchorEl}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  open={open}
-                  onClose={handleClose}
-                >
-                  <MenuItem onClick={handleClose}>Profile</MenuItem>
-                  <MenuItem onClick={handleClose}>My account</MenuItem>
-                </Menu>
-              </div>
-            )}
-          </Toolbar>
-        </AppBar>
-    );
+            <IconButton
+              onClick={handleClick}
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              // prefix
+            >
+              <ExpandMoreIcon color="primary" />
+            </IconButton>
+            <Avatar
+              alt="profile Photo"
+              src="/images/avatar.jpeg"
+              onClick={handleClick}
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+            >
+              N
+            </Avatar>
+
+            <Typography
+              className={classes.nav_item}
+              variant="body1"
+              component="h2"
+              color="primary"
+            >
+              Susan Storm
+            </Typography>
+            <Menu
+              id="simple-menu"
+              anchorEl={isOpen}
+              keepMounted
+              open={Boolean(isOpen)}
+              onClose={handleClose}
+              elevation={0}
+              getContentAnchorEl={null}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "center",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "center",
+              }}
+            >
+              <MenuItem onClick={handleClose}>Profile</MenuItem>
+              <MenuItem onClick={handleClose}>My account</MenuItem>
+              <MenuItem onClick={handleClose}>Logout</MenuItem>
+            </Menu>
+          </div>
+        )}
+      </Toolbar>
+    </AppBar>
+  );
 }
 
-export default NavBar
+export default NavBar;

@@ -3,8 +3,22 @@ html,
 body {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: #fafafa;
+    .d_flex_row{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .d_flex_col{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
 }
 
 
@@ -12,4 +26,6 @@ body {
   box-sizing: border-box;
 
 }
+
+
 

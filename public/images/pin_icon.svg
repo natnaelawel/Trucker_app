@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="79.398" viewBox="0 0 56 79.398">
+  <g id="Group_9836" data-name="Group 9836" transform="translate(-1075 -492.602)">
+    <ellipse id="Ellipse_51" data-name="Ellipse 51" cx="28" cy="4.5" rx="28" ry="4.5" transform="translate(1075 563)" fill="#151515"/>
+    <g id="pinMap" transform="translate(1079 492.602)">
+      <g id="Group_3" data-name="Group 3">
+        <path id="Oval_3" data-name="Oval 3" d="M23.413,71.787c0,.772,23.413-35.877,23.413-48.653A23.274,23.274,0,0,0,23.413,0,23.274,23.274,0,0,0,0,23.133C0,35.909,23.413,71.015,23.413,71.787Z" fill="#151515"/>
+        <circle id="Oval_4" data-name="Oval 4" cx="10.926" cy="10.926" r="10.926" transform="translate(12.487 12.487)" fill="#20cccc"/>
+      </g>
+    </g>
+  </g>
+</svg>

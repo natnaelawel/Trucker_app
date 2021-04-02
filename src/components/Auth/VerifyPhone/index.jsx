@@ -28,17 +28,17 @@ function ValidatePhone() {
       </Grid>
       <Grid item xs={12}>
         <Typography variant="body2" align="center" color="secondary">
-          Please type the verification code sent via SMS to: 
+          Please type the verification code sent via SMS to:
         </Typography>
-        <br/>
+        <br />
         <Typography align="center" color="textSecondary">
-            +251 915 670 645
+          +251 915 670 645
         </Typography>
       </Grid>
       <Grid item xs={12} className={classes.verify_input}>
         <ReactInputVerificationCode placeholder={0} onChange={console.log} />
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={10}>
         <Button
           fullWidth
           type="submit"

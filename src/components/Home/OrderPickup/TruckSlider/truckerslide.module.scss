@@ -1,0 +1,21 @@
+
+.swiper{
+    position: relative;
+    &:after{
+        content: ">";
+        z-index: 110;
+        position: absolute;
+        font-size: 150px;
+        font-weight:bolder
+    }
+    .selected{
+        // opacity: 0.7;
+        border: 5px solid #20cccc;
+        
+        color: #20cccc;
+        &::after{
+            content: "";
+            background-color: blue;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+.order_form{
+    padding: 0 10px ;
+    .form_group{
+        margin-bottom: 10px;
+        // border: 1px solid red;
+    .badge{
+        height: 15px;
+        width: 15px;
+        margin: 0 10px;
+        border-radius: 50%;
+    }
+    .badge_1{
+        background-color: #20cccc;
+    }
+    .badge_2{
+        background-color: #db930e;
+    }
+}
+.submit {
+    color: white;
+    margin: 30px 0 10px 0;
+    padding: 10px 100px;
+    border-radius: 20px;
+}
+}

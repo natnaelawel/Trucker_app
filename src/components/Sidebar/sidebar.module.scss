@@ -1,0 +1,27 @@
+.sidebar{
+    min-height: 100%;
+    height: 100%;
+    background-color: rgb(245, 245, 245);
+    .sidebar_menu{
+        display: flex;
+        justify-content: stretch;  
+        .menulists{
+            width: 100%;
+            .list_item{
+                padding-left: 30%;
+            }
+        }
+    }
+    .sidebar_action{
+        display: flex;
+        align-items: flex-end;
+        justify-content: stretch;
+        .menulists{
+            width: 100%;
+            .list_item{
+                padding-left: 30%;
+            }
+        }
+    }
+   
+}

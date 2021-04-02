@@ -1,0 +1,21 @@
+.appbar{
+    height: 60px;
+    .toolbar{
+        display: flex;
+        justify-content: space-between;
+        // .nav_brand{
+
+        // }
+        .nav_items{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            .nav_item{
+                padding: 0 10px;
+            }
+        }
+
+
+        
+    }
+}
