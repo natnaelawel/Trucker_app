@@ -1,0 +1,53 @@
+.root {
+    max-height: 100vh !important;
+    position: relative;
+
+    .navbar {
+        height: 70px;
+    }
+
+    .main {
+        max-height: calc(100vh - 70px) !important;
+        position: relative;
+
+        .content {
+            padding: 5px 20px;
+            overflow-y: scroll;
+            max-height: 100%;
+
+            .search {
+                .searchField {
+                    border: 1px solid #aaa;
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    min-height: 40px;
+                    align-items: center;
+                    padding: 0 15px;
+                    .searchIcon {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 100%;
+                        margin-right: 10px;
+                    }
+                    .inputRoot {
+                        color: 'inherit';
+                    }
+                    .inputInput {
+                        flex: 1;
+                    }
+                }
+            }
+            // .completed{
+            // border: 1px solid red;
+
+            // }
+            // .Scheduled{
+            // border: 1px solid red;
+
+            // }
+        }
+
+    }
+}

@@ -83,18 +83,25 @@ function DriverStatus() {
               Message Driver
             </Typography>
           </Button>
-          <Button
-            type="submit"
-            variant="outlined"
-            color="primary"
-            className={classes.submit}
-            onClick={() => setCurrentStep(1)}
-            fullWidth
-          >
-            <Typography variant="body1" color="error">
-              Request another Driver
-            </Typography>
-          </Button>
+          {false ? (
+            <Button
+              type="submit"
+              variant="outlined"
+              color="primary"
+              className={classes.submit}
+              onClick={() => setCurrentStep(1)}
+              fullWidth
+            >
+              <Typography variant="body1" color="error">
+                Request another Driver
+              </Typography>
+            </Button>
+          ) : (
+            <Box>
+              <Typography align="center" variant="subtitle2">Arrived In</Typography>
+              <Typography align="center" variant="subtitle1">2:13:33</Typography>
+            </Box>
+          )}
         </div>
       </Grid>
     </Grid>

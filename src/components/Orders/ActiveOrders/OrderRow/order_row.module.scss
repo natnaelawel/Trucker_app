@@ -1,0 +1,21 @@
+.root{
+    .card{
+        position: relative;
+        padding: 10px 0;
+        .grid{
+            min-height: 200px;
+            .badge{
+                height: 15px;
+                width: 15px;
+                margin: 0 10px;
+                border-radius: 50%;
+            }
+            .badge_1{
+                background-color: #20cccc;
+            }
+            .badge_2{
+                background-color: #db930e;
+            }
+        }
+    }
+}

@@ -1,7 +1,16 @@
 import { Divider, Grid, List, ListItem, ListItemText } from "@material-ui/core";
 import classes from "./sidebar.module.scss";
-import Link from "next/link"
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+
 function Sidebar() {
+  const [currentPathName, setCurrentPathName] = useState("/");
+  const router = useRouter();
+  useEffect(() => {
+    const name = router.pathname;
+    setCurrentPathName(name);
+  }, [router]);
   return (
     <Grid
       container
@@ -24,30 +33,54 @@ function Sidebar() {
               button
               component="a"
               className={classes.list_item}
-              selected={0 === 0}
+              selected={"/" == currentPathName}
             >
               <ListItemText primary="Home" />
             </ListItem>
           </Link>
           <Divider light />
-          <ListItem button className={classes.list_item}>
-            <ListItemText primary="Active Orders" />
-          </ListItem>
+          <Link href="/orders/active">
+            <ListItem
+              button
+              component="a"
+              className={classes.list_item}
+              selected={"/orders/active" == currentPathName}
+            >
+              <ListItemText primary="Active Orders" />
+            </ListItem>
+          </Link>
           <Divider light />
-
-          <ListItem button className={classes.list_item}>
-            <ListItemText primary="History" />
-          </ListItem>
+          <Link href="/orders/history">
+            <ListItem
+              button
+              component="a"
+              className={classes.list_item}
+              selected={"/orders/history" == currentPathName}
+            >
+              <ListItemText primary="History" />
+            </ListItem>
+          </Link>
           <Divider light />
-
-          <ListItem button className={classes.list_item}>
-            <ListItemText primary="Messages" />
-          </ListItem>
+          <Link href="/messages">
+            <ListItem
+              button
+              component="a"
+              className={classes.list_item}
+              selected={"/messages" == currentPathName}
+            >
+              <ListItemText primary="Messages" />
+            </ListItem>
+          </Link>
           <Divider light />
-
-          <ListItem button className={classes.list_item}>
-            <ListItemText primary="Invoices" />
-          </ListItem>
+          <Link href="/invoices">
+            <ListItem
+              button
+              className={classes.list_item}
+              selected={"/invoices" == currentPathName}
+            >
+              <ListItemText primary="Invoices" />
+            </ListItem>
+          </Link>
           <Divider light />
         </List>
       </Grid>

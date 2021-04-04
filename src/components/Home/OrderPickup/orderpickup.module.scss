@@ -1,12 +1,14 @@
-.order{
-    min-height: calc(100vh - 200px);
-    // position: relative;
-    padding: 10px 0;
-    .content{
-        position: relative;
-        .map{
-            height: 100% !important;
+.root{
+    .navbar{
+        height: 70px;
+    }
+    .order{
+        .content{
+            position: relative;
+            .map{
+                height: 100% !important;
+            }
+            
         }
-     
     }
 }

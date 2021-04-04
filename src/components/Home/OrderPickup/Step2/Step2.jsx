@@ -233,7 +233,7 @@ function Step2Order({ setCurrentStep }) {
             </Typography>
             <KeyboardTimePicker
               margin="normal"
-              variant="outlined"
+              variant="inline"
               id="time-picker"
               value={selectedDate}
               onChange={handleDateChange}

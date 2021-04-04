@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import "nprogress/nprogress.css";
 import "react-phone-input-2/lib/material.css";
 import "swiper/swiper.scss";
@@ -5,7 +6,9 @@ import "swiper/swiper.scss";
 import "../styles/globals.scss";
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/core";
+import theme from "../utils/theme";
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 const TopProgressBar = dynamic(
   () => {
@@ -13,55 +16,15 @@ const TopProgressBar = dynamic(
   },
   { ssr: false }
 );
-
-const theme = createMuiTheme({
-  typography: {
-    button: {
-      textTransform: "none",
-    },
-  },
-  overrides: {
-    MuiDivider:{
-      root:{
-        margin: "5px 0"
-      }
-    },
-    MuiAppBar: {
-      root: {},
-    },
-    MuiListItem: {
-      root: {
-        "&$selected": {
-          backgroundColor: "#20cccc",
-        },
-      },
-    },
-  },
-  palette: {
-    primary: {
-      light: "#20cccc",
-      main: "#20cccc",
-    },
-    secondary: {
-      main: "#999",
-    },
-    text: {
-      primary: "#111111",
-      secondary: "#999",
-    },
-    error: {
-      main: "#cc0000",
-    },
-    background:{
-      default: "#eee"
-    },
-    grey:{
-      "600": "#aaa"
-    }
-  },
-});
-
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    // Remove the server-side injected CSS.
+    const jssStyles = document.querySelector("#jss-server-side");
+    if (jssStyles) {
+      jssStyles.parentElement.removeChild(jssStyles);
+    }
+  }, []);
+
   return (
     <>
       <Head>
@@ -71,6 +34,8 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <ThemeProvider theme={theme}>
+        <CssBaseline />
+
         <TopProgressBar />
         <Component {...pageProps} />
       </ThemeProvider>

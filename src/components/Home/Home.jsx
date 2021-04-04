@@ -17,8 +17,8 @@ import classes from "./Home.module.scss";
 
 function Home() {
   return (
-    <Grid container>
-      <Grid item xs={12}>
+    <Grid container className={classes.root}>
+      <Grid item xs={12} className={classes.navbar}>
         <NavBar />
       </Grid>
       <Grid item xs={12} container className={classes.home}>

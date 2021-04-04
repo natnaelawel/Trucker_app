@@ -1,10 +1,7 @@
 .sidebar{
-    min-height: calc(100vh - 90px);
-    height: 100%;
+    min-height: calc(100vh - 70px);
     background-color: rgb(245, 245, 245);
     .sidebar_menu{
-        display: flex;
-        justify-content: stretch;  
         .menulists{
             width: 100%;
             .list_item{
@@ -15,7 +12,6 @@
     .sidebar_action{
         display: flex;
         align-items: flex-end;
-        justify-content: stretch;
         .menulists{
             width: 100%;
             .list_item{
