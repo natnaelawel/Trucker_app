@@ -7,7 +7,7 @@ import {
 } from "@react-google-maps/api";
 import { memo, useCallback, useState } from "react";
 import Skeleton from "@material-ui/lab/Skeleton";
-
+import classes from "./googlemap.module.scss"
 function CustomGoogleMap() {
   let directionsService;
   const [state, setState] = useState({
@@ -17,12 +17,10 @@ function CustomGoogleMap() {
   const containerStyle = {
     width: "100%",
     outline: "none",
-    height: "calc(100vh - 150px)",
+    height: "100%",
   };
 
   const center = {
-    // lat: -3.745,
-    // lng: -38.523,
     lat: 9.0526281,
     lng: 38.7577503,
   };
@@ -32,10 +30,10 @@ function CustomGoogleMap() {
     { lat: 36.2169884797185, lng: -112.056727493181 },
   ];
   const options = {
-    strokeColor: "#FF0000",
+    strokeColor: "#20cccc",
     strokeOpacity: 0.8,
     strokeWeight: 2,
-    fillColor: "#FF0000",
+    fillColor: "#20cccc",
     fillOpacity: 0.35,
     clickable: false,
     draggable: false,
@@ -91,35 +89,39 @@ function CustomGoogleMap() {
     setMap(null);
   }, []);
 
-  return isLoaded ? (
-    <GoogleMap
-      mapContainerStyle={containerStyle}
-      center={center}
-      zoom={10}
-      onLoad={onLoad}
-      id="eeab4ea89e3e0085"
-      onUnmount={onUnmount}
-    >
-      {state.directions !== null && (
-        <DirectionsRenderer directions={state.directions} />
+  return (
+    <div class={classes.root}>
+      {isLoaded ? (
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={10}
+          onLoad={onLoad}
+          id="eeab4ea89e3e0085"
+          onUnmount={onUnmount}
+        >
+          {state.directions !== null && (
+            <DirectionsRenderer directions={state.directions} />
+          )}
+          <Marker
+            onLoad={onLoad}
+            position={position}
+            icon={{
+              url: "/images/pin_icon.svg",
+              scaledSize: new window.google.maps.Size(50, 50),
+              // anchor: new google.maps.Point(5, 58),
+            }}
+          />
+          <Polyline onLoad={onLoad} path={paths} options={options} />
+        </GoogleMap>
+      ) : (
+        <>
+          <Skeleton animation="wave" variant="rect" height="100%" width="100%">
+            <h1>Is Not Loaded</h1>
+          </Skeleton>
+        </>
       )}
-      <Marker
-        onLoad={onLoad}
-        position={position}
-        icon={{
-          url: "/images/pin_icon.svg",
-          scaledSize: new window.google.maps.Size(50, 50),
-          // anchor: new google.maps.Point(5, 58),
-        }}
-      />
-      <Polyline onLoad={onLoad} path={paths} options={options} />
-    </GoogleMap>
-  ) : (
-    <>
-      <Skeleton animation="wave" variant="rect" height="100%" width="100%">
-        <h1>Is Not Loaded</h1>
-      </Skeleton>
-    </>
+    </div>
   );
 }
 

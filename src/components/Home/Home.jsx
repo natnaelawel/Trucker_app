@@ -1,4 +1,15 @@
-import { Button, ButtonBase, Divider, Grid, List, ListItem, ListItemText, Paper, Typography } from "@material-ui/core";
+import {
+  Button,
+  ButtonBase,
+  Divider,
+  Grid,
+  List,
+  ListItem,
+  ListItemText,
+  Paper,
+  Typography,
+} from "@material-ui/core";
+import Link from "next/link";
 import NavBar from "../Appbar";
 import Sidebar from "../Sidebar/Sidebar";
 import CustomGoogleMap from "./CustomGoogleMap";
@@ -11,22 +22,26 @@ function Home() {
         <NavBar />
       </Grid>
       <Grid item xs={12} container className={classes.home}>
-        <Sidebar/>
+        <Sidebar />
         <Grid item xs={10} className={classes.maparea}>
           <Grid item xs={12} className={classes.map}>
             <CustomGoogleMap />
           </Grid>
           <Grid item xs={12}>
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              <Typography variant="body1" color="textPrimary">
-                Order A Pickup
-              </Typography>
-            </Button>
+            <Link href="/orders/create">
+              <a class="link_element">
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  className={classes.submit}
+                >
+                  <Typography variant="body1" color="textPrimary">
+                    Order A Pickup
+                  </Typography>
+                </Button>
+              </a>
+            </Link>
           </Grid>
         </Grid>
       </Grid>

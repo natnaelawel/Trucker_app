@@ -1,6 +1,6 @@
 import "nprogress/nprogress.css";
 import "react-phone-input-2/lib/material.css";
-import "swiper/swiper.scss"
+import "swiper/swiper.scss";
 
 import "../styles/globals.scss";
 import dynamic from "next/dynamic";
@@ -15,26 +15,26 @@ const TopProgressBar = dynamic(
 );
 
 const theme = createMuiTheme({
+  typography: {
+    button: {
+      textTransform: "none",
+    },
+  },
   overrides: {
-    MuiAppBar:{
+    MuiDivider:{
       root:{
-      }, 
-      
+        margin: "5px 0"
+      }
+    },
+    MuiAppBar: {
+      root: {},
     },
     MuiListItem: {
       root: {
         "&$selected": {
           backgroundColor: "#20cccc",
-          // "&:hover": {
-          //   backgroundColor: "orange",
-          // },
         },
       },
-      // button: {
-      //   "&:hover": {
-      //     backgroundColor: "yellow",
-      //   },
-      // },
     },
   },
   palette: {
@@ -49,7 +49,15 @@ const theme = createMuiTheme({
       primary: "#111111",
       secondary: "#999",
     },
-    divider: "#333",
+    error: {
+      main: "#cc0000",
+    },
+    background:{
+      default: "#eee"
+    },
+    grey:{
+      "600": "#aaa"
+    }
   },
 });
 

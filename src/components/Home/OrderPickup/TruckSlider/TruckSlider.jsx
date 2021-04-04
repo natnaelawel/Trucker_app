@@ -1,10 +1,18 @@
 // Import Swiper React components
-import { Card, CardActionArea, CardMedia, Typography } from "@material-ui/core";
+import {
+  Card,
+  CardActionArea,
+  CardMedia,
+  Grid,
+  IconButton,
+  Typography,
+} from "@material-ui/core";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { useState } from "react";
 import classnames from "classnames";
 import classes from "./truckerslide.module.scss";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 const SingleCar = ({ isSelected, car }) => {
   const selectedItemClass = classes.selected;
   return (
@@ -38,10 +46,11 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 const TruckerSlider = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const handleClick = (index) => {
+  const handleNext = () => {
     const swiper = document.querySelector(".swiper-container").swiper;
     swiper.slideNext();
-
+  };
+  const handleClick = (index) => {
     setSelectedIndex(index);
   };
   const cars = [
@@ -108,27 +117,35 @@ const TruckerSlider = () => {
     },
   ];
   return (
-    <Swiper
-      spaceBetween={10}
-      slidesPerView={6}
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => swiper.slideNext()}
-      navigation={{
-        nextEl: ".next",
-      }}
-      className={classes.swiper}
-    >
-      {cars.map((car, index) => {
-        return (
-          <SwiperSlide key={index} onClick={() => handleClick(index)}>
-            <SingleCar car={car} isSelected={selectedIndex == index} />
-          </SwiperSlide>
-        );
-      })}
+    <Grid container alignItems="center">
+      <Grid item xs={11}>
+        <Swiper
+          spaceBetween={10}
+          slidesPerView={6}
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          navigation={{
+            nextEl: ".next",
+          }}
+          className={classes.swiper}
+        >
+          {cars.map((car, index) => {
+            return (
+              <SwiperSlide key={index} onClick={() => handleClick(index)}>
+                <SingleCar car={car} isSelected={selectedIndex == index} />
+              </SwiperSlide>
+            );
+          })}
 
-      <div className="next"></div>
-    </Swiper>
+          <div className="next"></div>
+        </Swiper>
+      </Grid>
+      <Grid item xs={1}>
+        <IconButton onClick={handleNext}>
+          <ArrowForwardIosIcon />
+        </IconButton>
+      </Grid>
+    </Grid>
   );
 };
 

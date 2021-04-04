@@ -9,6 +9,7 @@ import {
   InputLabel,
   MenuItem,
   OutlinedInput,
+  Select,
   TextField,
   Typography,
 } from "@material-ui/core";
@@ -191,10 +192,9 @@ function Step1Order({orderData, setOrderData, setCurrentStep}) {
             variant="outlined"
             style={{ width: "100%" }}
           >
-            <TextField
+            <Select
               id="outlined-select-load_type"
               select
-              label="Select"
               value={"Breakable"}
               // onChange={handleChange}
               variant="outlined"
@@ -216,7 +216,7 @@ function Step1Order({orderData, setOrderData, setCurrentStep}) {
               {/* {option.label} */}
               {/* </MenuItem> */}
               {/* ))} */}
-            </TextField>
+            </Select>
           </FormControl>
         </Grid>
         <Grid item sm={5} className={classes.form_group}>
@@ -228,10 +228,9 @@ function Step1Order({orderData, setOrderData, setCurrentStep}) {
             variant="outlined"
             style={{ width: "100%" }}
           >
-            <TextField
+            <Select
               id="outlined-select-load_type"
               select
-              label="Select"
               value={"Breakable"}
               // onChange={handleChange}
               variant="outlined"
@@ -248,7 +247,7 @@ function Step1Order({orderData, setOrderData, setCurrentStep}) {
               {/* {option.label} */}
               {/* </MenuItem> */}
               {/* ))} */}
-            </TextField>
+            </Select>
           </FormControl>
         </Grid>
       </Grid>
@@ -272,10 +271,9 @@ function Step1Order({orderData, setOrderData, setCurrentStep}) {
             variant="outlined"
             style={{ width: "100%" }}
           >
-            <TextField
+            <Select
               id="outlined-select-Vehicle_amenities"
               select
-              label="Select"
               value={"Breakable"}
               // onChange={handleChange}
               variant="outlined"
@@ -292,7 +290,7 @@ function Step1Order({orderData, setOrderData, setCurrentStep}) {
               {/* {option.label} */}
               {/* </MenuItem> */}
               {/* ))} */}
-            </TextField>
+            </Select>
           </FormControl>
         </Grid>
         <Grid item sm={5} className={classes.form_group}>
@@ -304,10 +302,9 @@ function Step1Order({orderData, setOrderData, setCurrentStep}) {
             variant="outlined"
             style={{ width: "100%" }}
           >
-            <TextField
+            <Select
               id="outlined-select-load_type"
               select
-              label="Select"
               value={"Breakable"}
               // onChange={handleChange}
               variant="outlined"
@@ -324,7 +321,7 @@ function Step1Order({orderData, setOrderData, setCurrentStep}) {
               {/* {option.label} */}
               {/* </MenuItem> */}
               {/* ))} */}
-            </TextField>
+            </Select>
           </FormControl>
         </Grid>
       </Grid>

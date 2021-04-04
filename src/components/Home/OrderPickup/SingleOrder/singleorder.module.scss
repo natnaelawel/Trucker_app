@@ -1,0 +1,40 @@
+.root{
+    padding: 10px 0;
+    position: relative;
+    .content{
+        // padding: 10px 0;
+        min-height: calc(100vh - 90px);
+
+        position: relative;
+        .order_form{
+            padding: 5px 10px ;
+            .form_group{
+                margin-bottom: 10px;
+                .badge{
+                    height: 15px;
+                    width: 15px;
+                    border-radius: 50%;
+                }
+                .badge_1{
+                    background-color: #20cccc;
+                }
+                .badge_2{
+                    background-color: #db930e;
+                }
+            }
+            .submit {
+                color: white;
+                // margin: 30px 0 10px 0;
+                padding: 5px 20px;
+                border-radius: 20px;
+            }
+        }
+        .map{
+            min-height: 100%;
+        }
+        .waitingButton{
+            border-radius: 20px;
+            background-color: rgba(32,204,204, 0.1);
+        }
+    }
+    }

@@ -6,6 +6,7 @@ import Step1Order from "./Step1/Step1";
 import Step2Order from "./Step2/Step2";
 import classes from "./orderpickup.module.scss";
 import { useState } from "react";
+import Step3Order from "./Step3/Step3";
 function OrderPickup() {
   const [currentStep, setCurrentStep] = useState(0);
   const [orderData, setOrderData] = useState({})
@@ -13,11 +14,25 @@ function OrderPickup() {
   const renderCurrentStep = () => {
     if (currentStep == 0) {
       return (
-        <Step1Order orderData={orderData} setOrderData={setOrderData} currentStep={currentStep} setCurrentStep={setCurrentStep} />
+        <Step1Order
+          orderData={orderData}
+          setOrderData={setOrderData}
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
+        />
       );
-    }else if(currentStep == 1){
+    } else if (currentStep == 1) {
       return (
         <Step2Order
+          orderData={orderData}
+          setOrderData={setOrderData}
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
+        />
+      );
+    } else if (currentStep == 2) {
+      return (
+        <Step3Order
           orderData={orderData}
           setOrderData={setOrderData}
           currentStep={currentStep}

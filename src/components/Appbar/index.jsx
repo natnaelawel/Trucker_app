@@ -17,6 +17,7 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import { useState } from "react";
 import Image from "next/image";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Link from "next/link";
 
 function NavBar() {
   const [auth, setAuth] = useState(null);
@@ -31,24 +32,33 @@ function NavBar() {
   };
 
   return (
-    <AppBar elevation={1} className={classes.appbar} color="transparent" position="static">
+    <AppBar
+      elevation={1}
+      className={classes.appbar}
+      color="transparent"
+      position="static"
+    >
       <Toolbar className={classes.toolbar}>
-        <IconButton
-          edge="start"
-          className={classes.nav_brand}
-          color="inherit"
-          aria-label="menu"
-        >
-          <Image
-            src="/images/another.svg"
-            width={50}
-            height={50}
-            objectFit="cover"
-          />
-        </IconButton>
+        <Link href="/">
+          <a>
+            <IconButton
+              edge="start"
+              className={classes.nav_brand}
+              color="inherit"
+              aria-label="menu"
+            >
+              <Image
+                src="/images/another.svg"
+                width={50}
+                height={50}
+                objectFit="cover"
+              />
+            </IconButton>
+          </a>
+        </Link>
         {!auth && (
           <div className={classes.nav_items}>
-            <IconButton aria-label="show 3 new notifications" >
+            <IconButton aria-label="show 3 new notifications">
               <Badge badgeContent={3} color="primary">
                 <NotificationsIcon />
               </Badge>
