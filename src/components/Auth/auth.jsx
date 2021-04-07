@@ -39,13 +39,13 @@ function Auth() {
         {/* <div> */}
           {/* <InsertPhone /> */}
         {/* </div> */}
-        <div>
-          <VerifyPhone />
-        </div>
-        {/* <div className={classes.CustomSwitch}> */}
-          {/* <CustomSwitch setisSignUp={setisSignUp} isSignUp={isSignUp} /> */}
+        {/* <div> */}
+          {/* <VerifyPhone /> */}
         {/* </div> */}
-        {/* <div className={classes.form}>{isSignUp ? <Signup /> : <Login />}</div> */}
+        <div className={classes.CustomSwitch}>
+          <CustomSwitch setisSignUp={setisSignUp} isSignUp={isSignUp} />
+        </div>
+        <div className={classes.form}>{isSignUp ? <Signup /> : <Login />}</div>
       </Grid>
     </Grid>
   );

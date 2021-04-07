@@ -6,10 +6,10 @@ import {
   Grid,
   Typography,
 } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
 import { Rating } from "@material-ui/lab";
 import classes from "./driverstatus.module.scss";
 import StarIcon from "@material-ui/icons/Star";
+import { withStyles } from "@material-ui/core/styles";
 import classnames from "classnames";
 function DriverStatus() {
   const StyledRating = withStyles({

@@ -194,7 +194,6 @@ function Step1Order({orderData, setOrderData, setCurrentStep}) {
           >
             <Select
               id="outlined-select-load_type"
-              select
               value={"Breakable"}
               // onChange={handleChange}
               variant="outlined"
@@ -230,7 +229,6 @@ function Step1Order({orderData, setOrderData, setCurrentStep}) {
           >
             <Select
               id="outlined-select-load_type"
-              select
               value={"Breakable"}
               // onChange={handleChange}
               variant="outlined"
@@ -273,7 +271,6 @@ function Step1Order({orderData, setOrderData, setCurrentStep}) {
           >
             <Select
               id="outlined-select-Vehicle_amenities"
-              select
               value={"Breakable"}
               // onChange={handleChange}
               variant="outlined"
@@ -304,7 +301,6 @@ function Step1Order({orderData, setOrderData, setCurrentStep}) {
           >
             <Select
               id="outlined-select-load_type"
-              select
               value={"Breakable"}
               // onChange={handleChange}
               variant="outlined"

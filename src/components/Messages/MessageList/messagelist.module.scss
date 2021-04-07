@@ -1,0 +1,27 @@
+.root{
+    display:flex;
+    flex-direction: column;
+    padding: 0 30px;
+    .message_area{
+        max-height: 60vh;
+        min-height: 60vh;
+        overflow-y: auto;
+        flex: 1;
+        .message_list{
+            display: flex;
+            flex-direction: column;
+           .avatar{
+                width: 40px;
+                height: 40px;
+                margin-right: 10px !important;
+           }
+        }
+    }
+    .message_input{
+        padding: 10px 20px;
+        .message_input_outlined{
+            border-radius: 20px;
+            padding: 0 10px;
+        }
+    }
+}

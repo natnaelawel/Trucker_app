@@ -3,7 +3,6 @@ import React from "react";
 import classes from "./customswitch.module.scss";
 import classnames from "classnames";
 function CustomSwitch({ isSignUp, setisSignUp }) {
-  console.log(isSignUp, setisSignUp);
   const handleToggle = (value) => () => {
     setisSignUp(value);
   };
@@ -23,7 +22,6 @@ function CustomSwitch({ isSignUp, setisSignUp }) {
         </Typography>
       </Button>
       <Button
-        color="textSecondary"
         className={classnames(classes.button, isSignUp && classes.isActive)}
         fullWidth
         variant="text"

@@ -72,13 +72,13 @@ function Sidebar() {
             </ListItem>
           </Link>
           <Divider light />
-          <Link href="/invoices">
+          <Link href="/payments">
             <ListItem
               button
               className={classes.list_item}
-              selected={"/invoices" == currentPathName}
+              selected={"/payments" == currentPathName}
             >
-              <ListItemText primary="Invoices" />
+              <ListItemText primary="Payments" />
             </ListItem>
           </Link>
           <Divider light />
@@ -93,19 +93,38 @@ function Sidebar() {
         >
           <Divider light />
 
-          <ListItem button className={classes.list_item}>
-            <ListItemText primary="Support" />
-          </ListItem>
+          <Link href="/supports">
+            <ListItem
+              button
+              component="a"
+              className={classes.list_item}
+              selected={"/supports" == currentPathName}
+            >
+              <ListItemText primary="Support" />
+            </ListItem>
+          </Link>
           <Divider light />
-
-          <ListItem button className={classes.list_item}>
-            <ListItemText primary="Profile Settings" />
-          </ListItem>
+          <Link href="/profile">
+            <ListItem
+              button
+              component="a"
+              className={classes.list_item}
+              selected={"/profile" == currentPathName}
+            >
+              <ListItemText primary="Profile Settings" />
+            </ListItem>
+          </Link>
           <Divider light />
-
-          <ListItem button className={classes.list_item}>
-            <ListItemText primary="Log Out" />
-          </ListItem>
+          <Link href="/auth">
+            <ListItem
+              button
+              component="a"
+              className={classes.list_item}
+              selected={"/logout" == currentPathName}
+            >
+              <ListItemText primary="Log Out" />
+            </ListItem>
+          </Link>
         </List>
       </Grid>
     </Grid>

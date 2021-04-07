@@ -1,0 +1,32 @@
+.root {
+    max-height: 100vh !important;
+    position: relative;
+
+    .navbar {
+        height: 70px;
+    }
+
+    .main {
+        max-height: calc(100vh - 70px) !important;
+        position: relative;
+
+        .content {
+            padding: 5px 20px;
+            overflow-y: auto;
+            max-height: 100%;
+            position: relative;
+            .profile_avatar {
+                width: 150px;
+                height: 150px;
+            }
+            .avatar {
+                width: 100px;
+                height: 100px;
+            }
+            .yourcode_btn{
+                padding: 5px 20px;
+                border-radius: 20px;
+            }
+        }
+    }
+}

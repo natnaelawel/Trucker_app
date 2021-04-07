@@ -1,0 +1,21 @@
+.root {
+    max-height: 100vh !important;
+    position: relative;
+
+    .navbar {
+        height: 70px;
+    }
+
+    .main {
+        max-height: calc(100vh - 70px) !important;
+        position: relative;
+
+        .content {
+            padding: 5px 20px;
+            overflow-y: scroll;
+            max-height: 100%;
+            position: relative;
+
+        }
+    }
+}

@@ -5,6 +5,7 @@ import DriverStatus from "../Home/OrderPickup/SingleOrder/WaitingDriverToConfirm
 import Sidebar from "../Sidebar/Sidebar";
 import ContactRow from "./ContactRow/ContactRow";
 import classes from "./message.module.scss";
+import MessageList from "./MessageList/MessageList";
 function Messages() {
   return (
     <Grid container className={classes.root}>
@@ -18,8 +19,7 @@ function Messages() {
             <Grid container>
               <Grid item xs={4} className={classes.contact_list}>
                 <Grid item xs={12}>
-                  <Box
-                   my={3}>
+                  <Box my={3}>
                     <Typography variant="subtitle1" color="textSecondary">
                       Messages
                     </Typography>
@@ -28,29 +28,23 @@ function Messages() {
                 <Box my={2}>
                   <Divider light />
                 </Box>
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, ].map((contact, index) => (
+                {[1, 2, 3, 4, 5, 6, 7].map((contact, index) => (
                   <Grid item xs={12}>
                     <ContactRow />
                     <Divider light />
                   </Grid>
                 ))}
               </Grid>
-              <Grid
-                item
-                xs={8}
-                className={classes.message_area}
-                justify="center"
-                align="center"
-              >
-                <Grid item xs={12}>
+              <Grid item xs={8} className={classes.message_area}>
+                <Box>
                   <DriverStatus />
-                </Grid>
-                <Grid item xs={12}>
-                    <Divider/>
-                </Grid>
-                <Grid item xs={12}>
-                  somet
-                </Grid>
+                </Box>
+                <Box>
+                  <Divider light />
+                </Box>
+                <Box >
+                  <MessageList />
+                </Box>
               </Grid>
             </Grid>
           </Paper>

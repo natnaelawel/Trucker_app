@@ -21,7 +21,6 @@ import {
 } from "@material-ui/core";
 
 import classnames from "classnames";
-import SvgIcon from "@material-ui/core/SvgIcon";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
 import classes from "./step2.module.scss";
@@ -216,7 +215,7 @@ function Step2Order({ setCurrentStep }) {
             </Typography>
             <KeyboardDatePicker
               disableToolbar
-              variant="inline"
+              variant="outlined"
               format="MM/DD/yyyy"
               margin="normal"
               id="date-picker"
@@ -233,7 +232,7 @@ function Step2Order({ setCurrentStep }) {
             </Typography>
             <KeyboardTimePicker
               margin="normal"
-              variant="inline"
+              variant="outlined"
               id="time-picker"
               value={selectedDate}
               onChange={handleDateChange}

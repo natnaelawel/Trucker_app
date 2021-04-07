@@ -19,13 +19,16 @@
             .chatbox {
                 min-height: 100%;
                 padding: 10px 20px;
-
+                
                 .contact_list {
                     padding: 0 10px;
                     min-height: 100%;
                 }
                 .message_area {
+                    position: relative;
                     min-height: 100%;
+                    display: flex;
+                    flex-direction: column; 
 
                 }
             }
