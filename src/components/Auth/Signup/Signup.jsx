@@ -33,7 +33,7 @@ function Signup() {
 
   return (
     <form className={classes.signup_form} onSubmit={handleSubmit}>
-      <Grid spacing={2} xs={12} container justify="center">
+      <Grid spacing={2} container justify="center">
         <Grid item xs={12}>
           <FormControl fullWidth>
             <InputLabel htmlFor="email">EMAIL</InputLabel>

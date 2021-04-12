@@ -1,4 +1,23 @@
 
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  // ::-webkit-scrollbar-track {
+    // background: #20cccc;
+  // }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    background-image: linear-gradient(to top right, #20cccc,#27acac, #269c9c, #26cccc, #14afaf, );
+
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    background-image: linear-gradient(to top right, #20cccc,#107c7c, #106b6b, #187e7e, #14afaf, );
+
+  }
 html,
 body {
   padding: 0;

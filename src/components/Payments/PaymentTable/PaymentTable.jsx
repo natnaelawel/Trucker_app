@@ -1,6 +1,5 @@
 import * as React from "react";
-import { DataGrid, GridPreferencePanelsValue } from "@material-ui/data-grid";
-// import classes from "./payment_table.module.scss";
+import classes from "./payment_table.module.scss";
 import { Box, Button, Typography } from "@material-ui/core";
 import MaterialTable from "material-table";
 import MaterialTableIcons from "./MaterialTableIcons";
@@ -229,7 +228,7 @@ const PaymentTable = () => {
   return (
     <MaterialTable
       icons={MaterialTableIcons}
-      title
+      title={false}
       columns={columns}
       data={rows}
       options={{
